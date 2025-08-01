@@ -33,7 +33,7 @@ for i in range(5):
     print(f"يتم تحميل الأقتباس {i+1}...")
     quote, author = get_quote()
     if quote and author:
-        save_quote_to_db(quote[0], quote[1])
+        save_quote_to_db(quote, author)
         time.sleep(1)
 print("\n📚 الاقتباسات المخزنة في قاعدة البيانات:")
 cur.execute('SELECT * FROM quotes')
@@ -42,3 +42,4 @@ for row in rows:
     print(f"{row[0]}. \"{row[1]}\" — {row[2]}")
 conn.close()
 
+#المشروع الاول او الثاني
