@@ -1,0 +1,4 @@
+uuid
+pyTelegramBotAPI
+yt-dlp
+requests
