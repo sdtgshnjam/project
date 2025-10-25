@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل مقاطع انستا و تيك توك</title>
+    <style>
+        body {
+            font-family: "Tajawal", Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 50px;
+            text-align: center;
+            direction: rtl;
+        }
+        h1 { color: #333; }
+        form {
+            margin-top: 30px;
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        button:hover { background-color: #218838; }
+        .msg {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>تحميل مقاطع إنستغرام وتيك توك</h1>
+    <p>أدخل رابط الفيديو المراد تحميله:</p>
+    
+    <form action="/" method="POST">
+        <input type="text" name="url" placeholder="ضع الرابط هنا..." required>
+        <button type="submit">تحميل</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="msg">
+          {% for msg in messages %}
+            <p>{{ msg }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>

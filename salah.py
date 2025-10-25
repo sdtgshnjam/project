@@ -15,7 +15,6 @@ if not os.path.exists(DOWNLOAD_DIR):
 @bot.message_handler(commands=['start'])
 def start(msg):
     bot.reply_to(msg, "أرسل رابط فيديو تيك توك أو إنستغرام لتحميله.")
-
 @bot.message_handler(func=lambda m: m.text.startswith("http"))
 def download_video(msg):
     url = msg.text.strip()
